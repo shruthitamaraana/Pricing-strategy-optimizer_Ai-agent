@@ -80,6 +80,6 @@ This project is open-source under the **MIT License**.
 #✨ Contribute
 Feel free to fork the repository, raise issues, and suggest improvements!
 
-🔗 **GitHub Repository**: [Your Repo Link Here]  
+🔗 **GitHub Repository**: (https://github.com/shruthitamaraana/Pricing-strategy-optimizer_Ai-agent)  
 📧 **Contact**:shruthitamaraana721@gmail.com
 
