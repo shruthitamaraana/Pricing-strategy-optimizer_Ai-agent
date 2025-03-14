@@ -1,9 +1,9 @@
 # Pricing Strategy Optimizer
 
-# 🚀 Overview
+#  Overview
 The **Pricing Strategy Optimizer** is an AI-powered agent designed to analyze, predict, and optimize pricing strategies for businesses. It leverages **data analytics, machine learning, and competitor analysis** to provide actionable insights for setting the most effective prices.
 
-# 🎯 Why Use This?
+#  Why Use This?
 Effective pricing is crucial for maximizing revenue and staying competitive. This AI agent helps businesses:
 - Analyze market trends and competitor pricing.
 - Predict the optimal pricing strategy.
@@ -11,7 +11,7 @@ Effective pricing is crucial for maximizing revenue and staying competitive. Thi
 - Suggest psychological pricing points.
 - Optimize pricing based on statistical and ML-driven insights.
 
-# 🛠️ Technologies Used
+# 🛠 Technologies Used
 - **Python** – Core programming language.
 - **Pandas & NumPy** – Data cleaning and analysis.
 - **Scikit-learn** – Machine learning models for price prediction.
@@ -19,7 +19,7 @@ Effective pricing is crucial for maximizing revenue and staying competitive. Thi
 - **Matplotlib & Seaborn** – Data visualization.
 - **FastAPI (Optional)** – For backend API exposure.
 
-# 📌 Strategies Implemented
+#  Strategies Implemented
 1. **Data Cleaning & Feature Engineering**  
    - Handling missing values and outliers.
    - Extracting numerical price values from raw data.
