@@ -69,6 +69,9 @@ To validate the AI agent's performance, you can test it using:
 - API usage
   - ex-"https://fakestoreapi.com/products" (no key required)
 - Custom pricing datasets with competitor pricing details.
+## Live Demo
+
+Check out the live application: Pricing Strategy Optimizer-https://pricing-strategy-optimizerai-agent-acj8br6blxp573nqvc7utt.streamlit.app/
 
 # 📜 License
 This project is open-source under the **MIT License**.
