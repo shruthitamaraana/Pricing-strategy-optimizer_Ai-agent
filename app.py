@@ -329,7 +329,7 @@ def main():
     Optimize your product pricing with data-driven strategies and AI recommendations.
     This tool analyzes competitor pricing, market trends, and consumer behavior to suggest optimal pricing strategies.(Add files without Null Values)
     """)
-     st.image(
+    st.image(
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpu_ysYHqqhb4-8Ows_oZPCGSabJVBMrAOog&s",
     caption="Pricing Strategy Optimizer",
     use_column_width=True
