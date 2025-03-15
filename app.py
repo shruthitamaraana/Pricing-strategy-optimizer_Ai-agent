@@ -332,7 +332,7 @@ def main():
     st.image(
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpu_ysYHqqhb4-8Ows_oZPCGSabJVBMrAOog&s",
     caption="Pricing Strategy Optimizer",
-    use_column_width=True
+    use_container_width=True
     )
     # Sidebar for input methods
     st.sidebar.title("Data Input")
