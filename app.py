@@ -305,6 +305,7 @@ class Visualizer:
         return fig
 
 # Main application
+
 def main():
     # Initialize classes
     data_collector = DataCollector()
@@ -324,85 +325,130 @@ def main():
         st.session_state.model_trained = False
 
     # Header
-    st.title("🚀 Pricing Strategy Optimizer")
+    st.title("💹 Pricing Strategy Optimizer")
     st.markdown("""
     Optimize your product pricing with data-driven strategies and AI recommendations.
-    This tool analyzes competitor pricing, market trends, and consumer behavior to suggest optimal pricing strategies.(Add files without Null Values)
+    This tool analyzes competitor pricing, market trends, and consumer behavior to suggest optimal pricing strategies.-(add files without Null values) 
     """)
+
+    # How It Works - Expandable Section
+    with st.expander("ℹ️ How It Works"):
+        st.write("""
+        1️⃣ **Upload Data** – Provide a CSV file containing product pricing details.  
+        2️⃣ **Data Processing** – The system cleans and structures your data.  
+        3️⃣ **Analysis & AI Modeling** – AI predicts optimal pricing based on trends.  
+        4️⃣ **Visualization & Insights** – Interactive charts and insights help in decision-making.  
+        """)
+
+    # User Guide
+    st.subheader("📌 Steps to Use:")
+    st.markdown("""
+    - **Step 1**: Select how you want to input your data from the sidebar.  
+    - **Step 2**: Upload a CSV file, scrape competitor prices, or fetch data from an API.  
+    - **Step 3**: The app processes the data and generates insights.  
+    - **Step 4**: View suggested pricing strategies and visualized insights.  
+    """)
+
+    # Display an Image
     st.image(
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpu_ysYHqqhb4-8Ows_oZPCGSabJVBMrAOog&s",
-    caption="Pricing Strategy Optimizer",
-    use_container_width=True
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpu_ysYHqqhb4-8Ows_oZPCGSabJVBMrAOog&s",
+        caption="Optimize Your Pricing Strategy",
+        use_column_width=True
     )
+
     # Sidebar for input methods
-    st.sidebar.title("Data Input")
+    st.sidebar.title(" 📜 Data Input Methods")
+    st.sidebar.markdown("Choose how you want to provide pricing data.")
+
     input_method = st.sidebar.radio(
         "Select Data Input Method",
         ["Upload CSV", "Web Scraping", "API Integration", "Sample Data"]
     )
-    
-    # CSV Upload
+
+    ### 📌 **1. CSV Upload**
     if input_method == "Upload CSV":
-        st.sidebar.subheader("Upload Pricing Data")
+        st.sidebar.subheader("📁 Upload Pricing Data")
+        st.sidebar.markdown("""
+        - Upload a **CSV file** containing product pricing details.  
+        - Ensure **no null values** are present in the file.  
+        - The system will automatically process and clean your data.  
+        """)
+        
         uploaded_file = st.sidebar.file_uploader("Choose a CSV file", type=['csv'])
         
         if uploaded_file is not None:
             df = data_collector.process_uploaded_file(uploaded_file)
             if isinstance(df, pd.DataFrame):
                 st.session_state.data = df
-                st.success("Data uploaded successfully!")
+                st.success("✅ Data uploaded successfully!")
             else:
                 st.error(df)  # Show error message
-    
-    # Web Scraping
+
+    ### 🌐 **2. Web Scraping**
     elif input_method == "Web Scraping":
-        st.sidebar.subheader("Web Scraping")
-        scrape_url = st.sidebar.text_input("Website URL")
-        css_selector = st.sidebar.text_input("CSS Selector for Price Elements", value=".price")
-        competitor_name = st.sidebar.text_input("Competitor Name")
+        st.sidebar.subheader("🌍 Scrape Competitor Prices")
+        st.sidebar.markdown("""
+        - Enter the **URL** of the website you want to scrape.  
+        - Provide the **CSS selector** for price elements.  
+        - Enter the **competitor name** to associate with scraped prices.  
+        - The system will extract pricing data for analysis.  
+        """)
         
-        if st.sidebar.button("Scrape Prices"):
+        scrape_url = st.sidebar.text_input("🔗 Website URL")
+        css_selector = st.sidebar.text_input("🎯 CSS Selector for Price Elements", value=".price")
+        competitor_name = st.sidebar.text_input("🏢 Competitor Name")
+        
+        if st.sidebar.button("🚀 Scrape Prices"):
             if scrape_url and css_selector:
                 prices = data_collector.scrape_competitor_prices(scrape_url, css_selector)
                 if not isinstance(prices, str):  # If not an error message
-                    # Convert scraped prices to DataFrame
                     df = pd.DataFrame({
                         'competitor': [competitor_name] * len(prices),
                         'price': prices,
                         'timestamp': pd.Timestamp.now()
                     })
                     st.session_state.data = df
-                    st.success(f"Scraped {len(prices)} prices successfully!")
+                    st.success(f"✅ Scraped {len(prices)} prices successfully!")
                 else:
                     st.error(prices)  # Show error message
             else:
-                st.warning("Please enter URL and CSS selector")
-    
-    # API Integration
+                st.warning("⚠️ Please enter a valid URL and CSS selector.")
+
+    ### 🔌 **3. API Integration**
     elif input_method == "API Integration":
-        st.sidebar.subheader("API Integration")
-        api_url = st.sidebar.text_input("API Endpoint URL")
-        api_key = st.sidebar.text_input("API Key (if required)", type="password")
+        st.sidebar.subheader("🔗 Fetch Data from API")
+        st.sidebar.markdown("""
+        - Enter the **API endpoint URL** that provides pricing data.  
+        - If required, enter the **API key** for authentication.  
+        - The system will fetch the latest pricing data from the API.  
+        """)
         
-        if st.sidebar.button("Fetch Data"):
+        api_url = st.sidebar.text_input("🌐 API Endpoint URL")
+        api_key = st.sidebar.text_input("🔑 API Key (if required)", type="password")
+        
+        if st.sidebar.button("📡 Fetch Data"):
             if api_url:
                 headers = {'Authorization': f'Bearer {api_key}'} if api_key else None
                 api_data = data_collector.fetch_from_api(api_url, headers=headers)
                 if not isinstance(api_data, str):  # If not an error message
-                    # Convert API response to DataFrame (this would need to be adapted to your API structure)
                     df = pd.DataFrame(api_data)
                     st.session_state.data = df
-                    st.success("Data fetched from API successfully!")
+                    st.success("✅ Data fetched from API successfully!")
                 else:
                     st.error(api_data)  # Show error message
             else:
-                st.warning("Please enter API URL")
-    
-    # Sample Data
+                st.warning("⚠️ Please enter a valid API URL.")
+
+    ### 🎲 **4. Sample Data**
     else:
-        st.sidebar.subheader("Sample Data")
-        if st.sidebar.button("Load Sample Data"):
-            # Create sample data
+        st.sidebar.subheader("🎲 Load Sample Data")
+        st.sidebar.markdown("""
+        - Load pre-generated **sample pricing data**.  
+        - Useful for testing features and visualizations.  
+        - Random competitor prices will be generated.  
+        """)
+
+        if st.sidebar.button("📊 Load Sample Data"):
             competitors = ['CompetitorA', 'CompetitorB', 'CompetitorC', 'CompetitorD']
             products = ['ProductX', 'ProductY', 'ProductZ']
             
@@ -415,7 +461,7 @@ def main():
             })
             
             st.session_state.data = df
-            st.success("Sample data loaded successfully!")
+            st.success("✅ Sample data loaded successfully!")
     
     # Data Processing
     if st.session_state.data is not None:
