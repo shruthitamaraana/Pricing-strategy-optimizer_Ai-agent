@@ -73,6 +73,9 @@ To validate the AI agent's performance, you can test it using:
 
 Check out the live application: Pricing Strategy Optimizer-https://pricing-strategy-optimizerai-agent-acj8br6blxp573nqvc7utt.streamlit.app/
 
+<video src="https://drive.google.com/uc?export=download&id=15-i93mOCQkcLc3gfX7b6sDzXI1k9aiVx" controls width="600"></video>
+
+
 # 📜 License
 This project is open-source under the **MIT License**.
 
