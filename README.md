@@ -1,5 +1,5 @@
 # Pricing Strategy Optimizer
-
+ 
 #  Overview
 The **Pricing Strategy Optimizer** is an AI-powered agent designed to analyze, predict, and optimize pricing strategies for businesses. It leverages **data analytics, machine learning, and competitor analysis** to provide actionable insights for setting the most effective prices.
 
