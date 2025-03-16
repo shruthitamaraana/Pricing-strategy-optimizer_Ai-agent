@@ -353,7 +353,7 @@ def main():
     st.image(
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpu_ysYHqqhb4-8Ows_oZPCGSabJVBMrAOog&s",
         caption="Optimize Your Pricing Strategy",
-        use_column_width=True
+        use_container_width=True
     )
 
     # Sidebar for input methods
