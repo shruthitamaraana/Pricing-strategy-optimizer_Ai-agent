@@ -328,13 +328,13 @@ def main():
     st.title("💹 Pricing Strategy Optimizer")
     st.markdown("""
     Optimize your product pricing with data-driven strategies and AI recommendations.
-    This tool analyzes competitor pricing, market trends, and consumer behavior to suggest optimal pricing strategies.-(add files without Null values) 
+    This tool analyzes competitor pricing, market trends, and consumer behavior to suggest optimal pricing strategies.
     """)
 
     # How It Works - Expandable Section
     with st.expander("ℹ️ How It Works"):
         st.write("""
-        1️⃣ **Upload Data** – Provide a CSV file containing product pricing details.  
+        1️⃣ **Upload Data** – Provide a CSV file containing product pricing details.-(add files without Null values).  
         2️⃣ **Data Processing** – The system cleans and structures your data.  
         3️⃣ **Analysis & AI Modeling** – AI predicts optimal pricing based on trends.  
         4️⃣ **Visualization & Insights** – Interactive charts and insights help in decision-making.  
