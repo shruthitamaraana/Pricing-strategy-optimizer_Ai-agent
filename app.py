@@ -341,20 +341,21 @@ def main():
         """)
 
     # User Guide
-    st.subheader("📌 Steps to Use:")
-    st.markdown("""
-    - **Step 1**: Select how you want to input your data from the sidebar.  
-    - **Step 2**: Upload a CSV file, scrape competitor prices, or fetch data from an API.  
-    - **Step 3**: The app processes the data and generates insights.  
-    - **Step 4**: View suggested pricing strategies and visualized insights.  
-    """)
-
-    # Display an Image
-    st.image(
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpu_ysYHqqhb4-8Ows_oZPCGSabJVBMrAOog&s",
-        caption="Optimize Your Pricing Strategy",
-        use_container_width=True
-    )
+    with st.expander("📌 Steps to Use:"):
+        st.subheader("📌 Steps to Use:")
+        st.markdown("""
+        - **Step 1**: Select how you want to input your data from the sidebar.  
+        - **Step 2**: Upload a CSV file, scrape competitor prices, or fetch data from an API.  
+        - **Step 3**: The app processes the data and generates insights.  
+        - **Step 4**: View suggested pricing strategies and visualized insights.  
+        """)
+    
+        # Display an Image
+        st.image(
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpu_ysYHqqhb4-8Ows_oZPCGSabJVBMrAOog&s",
+            caption="Optimize Your Pricing Strategy",
+            use_container_width=True
+        )
 
     # Sidebar for input methods
     st.sidebar.title(" 📜 Data Input Methods")
