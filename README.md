@@ -81,7 +81,7 @@ Check out the live application: Pricing Strategy Optimizer-https://pricing-strat
 This project is open-source under the **MIT License**.
 
 ---
-#✨ Contribute
+# ✨ Contribute
 Feel free to fork the repository, raise issues, and suggest improvements!
 
 🔗 **GitHub Repository**: ((https://pricing-strategy-optimizerai-agent-acj8br6blxp573nqvc7utt.streamlit.app/))  
